@@ -1,0 +1,18 @@
+.filter-select { background: #fff; color: #253745; border: 1px solid #c9d1d7; border-radius: 6px; padding: 7px 24px 7px 8px; font: inherit; font-size: 11px; cursor: pointer; max-width: 100%; }
+.filter-select:focus-visible { outline: 2px solid #467cae; outline-offset: 2px; }
+.map-filter-control { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 0; padding: 5px 10px; border: 1px solid #ffffff95; border-radius: 8px; background: #fffef3ed; box-shadow: 0 3px 12px #172a3726; max-width: 100%; }
+.map-filter-control label { font-size: 11px; color: #5e6870; }
+.map-filter-control .filter-select { max-width: 205px; }
+.comments-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin: 24px 0 12px; }
+.detail-panel .comments-heading h3 { margin: 0; }
+.comments-heading .filter-select { max-width: 155px; }
+.search-results { max-height: 340px; overflow-y: auto; }
+.search-empty { padding: 14px; font-size: 12px; line-height: 1.5; color: #64717b; }
+.zip-choices { flex-wrap: wrap; }
+#change-zip { border: 0; background: transparent; color: #2b66a8; text-decoration: underline; font-size: 12px; }
+.map-top-controls { flex-wrap: wrap; align-items: center; right: 65px; }
+.svg-geo-map [data-layer="feedback-dots"], .svg-geo-map .geo-selection { pointer-events: none; }
+.svg-geo-map .selected-zip-halo { fill: none; stroke: #fff; stroke-width: 8; stroke-linejoin: round; }
+.svg-geo-map .selected-zip-outline { fill: none; stroke: #164b7e; stroke-width: 4; stroke-linejoin: round; }
+.svg-geo-map .selected-zip-label rect { fill: #164b7e; }
+.svg-geo-map .selected-zip-label text { fill: #fff; font-family: Inter, Arial, sans-serif; font-weight: 700; text-anchor: middle; }

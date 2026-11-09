@@ -1,0 +1,29 @@
+{
+  "events": {
+    "rats": {
+      "total": 19896,
+      "mapped": 19846,
+      "missing": 50
+    },
+    "bait": {
+      "total": 26769,
+      "mapped": 26239,
+      "missing": 530
+    },
+    "initial": {
+      "total": 144313,
+      "mapped": 140762,
+      "missing": 3551
+    },
+    "compliance": {
+      "total": 40856,
+      "mapped": 40486,
+      "missing": 370
+    }
+  },
+  "sources": {
+    "reports": "erm2-nwe9",
+    "actions": "p937-wjvj"
+  },
+  "snapshot": "2026-10-26"
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive LOD1 model built from real NYC building footprints and roof heights." />
+    <title>Rat &amp; City | New York City 3D Model</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="embedded.css" />
+    <script src="../0.processed data/nyc-official-citygml-mesh.js" defer></script>
+    <script src="../0.processed data/nyc-3d-basemap-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body class="waste-standalone">
+    <a class="skip-link" href="#city-model">Skip to the 3D model</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html#home">RAT &amp; CITY</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html#home">HOME</a>
+        <a href="../index.html#hotspot-overlap">EXPLORE</a>
+        <a href="../index.html#timeline">IN CHANGING CITY</a>
+        <a href="../index.html#participation">YOUR VOICE</a>
+      </nav>
+    </header>
+    <main>
+      <section class="waste-section" aria-label="Three-dimensional New York City model">
+        <h1 class="sr-only">New York City 3D building model</h1>
+        <div class="waste-model-shell">
+          <canvas id="city-model" aria-label="New York City building model viewed from the southeast"></canvas>
+          <canvas id="city-overlay" aria-hidden="true"></canvas>
+          <div class="waste-model-grid" aria-hidden="true"></div>
+          <div class="loading-state" id="loading-state">LOADING NYC BUILDING FOOTPRINTS…</div>
+          <div class="view-controls" aria-label="3D view controls">
+            <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" id="reset-view" aria-label="Reset 3D view">↺</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

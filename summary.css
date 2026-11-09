@@ -1,0 +1,163 @@
+.summary-section {
+  --summary-ink: #172833;
+  --summary-paper: #f4f1e9;
+  --summary-panel: #fffdf8;
+  --summary-line: #cbd4d1;
+  --complaints: #dc5b3d;
+  --population: #2f80c1;
+  --income: #3b9366;
+  --housing: #8659b6;
+  --restaurant: #218c8c;
+  --disease: #c53f73;
+  min-height: 100vh;
+  background: var(--summary-paper);
+  color: var(--summary-ink);
+}
+
+.summary-heading {
+  min-height: 176px;
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(320px, .75fr);
+  align-items: end;
+  column-gap: 54px;
+  row-gap: 14px;
+  padding: 32px clamp(28px, 5vw, 82px) 28px;
+  background: #172833;
+  color: #f4f1e9;
+}
+
+.summary-kicker,
+.summary-eyebrow,
+.study-number {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+.summary-kicker { color: #aabcc3; }
+.summary-heading h2 { margin: 0; font-size: clamp(22px, 3vw, 52px); line-height: .9; letter-spacing: -.055em; white-space: nowrap; }
+.summary-lead { grid-column: 1 / -1; max-width: none; margin: 0; padding-bottom: 3px; color: #d9e1df; font-size: clamp(9.5px, .72vw, 13px); font-weight: 600; line-height: 1.6; }
+
+.summary-studies { padding: 0 clamp(24px, 5vw, 84px); }
+.study-row {
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: minmax(380px, .88fr) minmax(440px, 1.12fr);
+  align-items: center;
+  gap: clamp(42px, 6vw, 110px);
+  padding: clamp(46px, 5vw, 78px) 0;
+  border-bottom: 1px solid var(--summary-line);
+}
+.study-row:nth-child(even) .study-chart-card { order: 2; }
+.study-row:nth-child(even) .study-copy { order: 1; }
+
+.study-chart-card {
+  min-width: 0;
+  margin: 0;
+  padding: 24px 24px 17px;
+  border: 1px solid var(--summary-line);
+  background: var(--summary-panel);
+  box-shadow: 10px 10px 0 rgba(23,40,51,.08);
+}
+.study-chart-card svg { display: block; width: 100%; height: auto; overflow: visible; }
+.study-chart-card figcaption { margin-top: 10px; color: #718286; font-size: 8px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.study-copy { max-width: 760px; }
+.study-number { color: #657a80; }
+.study-copy h3 { max-width: 740px; margin: 0; font-size: clamp(28px, 3vw, 50px); line-height: .98; letter-spacing: -.045em; }
+.study-copy > p:not(.study-number):not(.study-question) { max-width: 700px; margin: 18px 0 0; color: #52676b; font-size: clamp(12px, 1vw, 16px); font-weight: 600; line-height: 1.55; }
+.study-question { margin: 20px 0 0; color: var(--summary-ink); font-size: clamp(17px, 1.45vw, 24px); font-style: italic; font-weight: 600; line-height: 1.35; }
+
+.study-finding {
+  max-width: 680px;
+  display: grid;
+  grid-template-columns: 110px minmax(88px, auto) 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-top: 26px;
+  padding: 16px 18px;
+  border-left: 5px solid var(--study-color, var(--complaints));
+  background: #ebe9e1;
+}
+.study-finding > span { color: #617579; font-size: 8px; font-weight: 800; letter-spacing: .12em; }
+.study-finding > strong { color: var(--study-color, var(--complaints)); font-size: 24px; white-space: nowrap; }
+.study-finding > strong b { font: inherit; }
+.study-finding > p { margin: 0; color: #4f6266; font-size: 9px; font-weight: 600; line-height: 1.45; }
+.study-restaurant { --study-color: var(--restaurant); }
+.study-income { --study-color: var(--income); }
+.study-quadrants { --study-color: var(--housing); }
+.study-seasonality { --study-color: var(--complaints); }
+.study-inspections { --study-color: var(--population); }
+
+.quadrant-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 26px; }
+.quadrant-summary div { padding: 13px 15px; border-left: 4px solid var(--quadrant-color); background: #ebe9e1; }
+.quadrant-summary span { display: block; color: #657a80; font-size: 7px; font-weight: 800; letter-spacing: .07em; }
+.quadrant-summary strong { display: block; margin-top: 4px; font-size: 20px; }
+.quadrant-summary small { display: block; margin-top: 4px; color: #657a80; font-size: 8px; font-weight: 700; }
+
+.summary-chart-grid { stroke: #d9dfdc; stroke-width: 1; }
+.summary-chart-axis { stroke: #72868a; stroke-width: 1.2; }
+.summary-chart-label { fill: #657a80; font-family: Montserrat, Arial, sans-serif; font-size: 10px; font-weight: 700; }
+.summary-chart-title { fill: var(--summary-ink); font-family: Montserrat, Arial, sans-serif; font-size: 11px; font-weight: 800; }
+.summary-chart-point { opacity: .66; stroke: #fffdf8; stroke-width: 1; }
+.summary-chart-point:hover { opacity: 1; stroke: var(--summary-ink); stroke-width: 2; }
+.summary-chart-trend { fill: none; stroke: var(--restaurant); stroke-width: 3; stroke-dasharray: 7 5; }
+.summary-chart-tooltip { pointer-events: none; }
+
+.summary-footer a {
+  justify-self: end;
+  color: var(--summary-paper);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+.summary-footer a:hover,
+.summary-footer a:focus-visible { color: #76c8c6; outline: none; }
+
+.model-introduction {
+  min-height: 176px;
+  display: grid;
+  align-content: end;
+  row-gap: 14px;
+  margin: 0;
+  padding: 32px clamp(28px, 5vw, 82px) 28px;
+  background: #172833;
+  color: #f4f1e9;
+}
+.model-introduction .model-introduction-kicker { margin: 0 0 8px; color: #aabcc3; font-size: 11px; font-weight: 800; letter-spacing: .18em; }
+.model-introduction h3 { max-width: none; margin: 0; font-size: clamp(22px, 3vw, 52px); line-height: .9; letter-spacing: -.055em; }
+.model-introduction > p:last-child { max-width: 1100px; margin: 0; color: #d9e1df; font-size: clamp(9.5px, .72vw, 13px); font-weight: 600; line-height: 1.6; }
+.summary-methods { display: grid; grid-template-columns: 170px 1fr; gap: 28px; margin: 0 clamp(24px, 5vw, 84px) clamp(38px, 5vw, 74px); padding-top: 22px; border-top: 1px solid #aab7b5; }
+.summary-methods strong { font-size: 10px; letter-spacing: .12em; }
+.summary-methods p { max-width: 1100px; margin: 0; color: #5e7175; font-size: 10px; font-weight: 600; line-height: 1.55; }
+.summary-footer { min-height: 72px; display: grid; grid-template-columns: 42px 220px 1fr 56px; align-items: center; gap: 16px; padding: 0 34px; background: #2c2c2c; color: var(--summary-paper); }
+.summary-footer > span:first-child,
+.summary-footer p { color: #bbc5c2; font-size: 11px; }
+.summary-footer strong { font-size: 12px; letter-spacing: .1em; }
+.summary-footer p { margin: 0; }
+.summary-footer > span:last-child { justify-self: end; font-weight: 800; }
+
+@media (max-width: 980px) {
+  .summary-heading h2 { white-space: normal; }
+  .study-row { grid-template-columns: 1fr; gap: 34px; }
+  .study-row:nth-child(even) .study-chart-card,
+  .study-row:nth-child(even) .study-copy { order: initial; }
+  .study-chart-card { max-width: 720px; }
+  .study-copy { max-width: 760px; }
+}
+
+@media (max-width: 620px) {
+  .summary-heading { grid-template-columns: 1fr; gap: 16px; align-items: start; padding: 28px 22px; }
+  .summary-lead br { display: none; }
+  .summary-studies { padding: 0 16px; }
+  .study-row { min-height: 0; padding: 40px 0; }
+  .study-chart-card { padding: 13px 12px 11px; box-shadow: 6px 6px 0 rgba(23,40,51,.08); }
+  .study-copy h3 { font-size: 31px; }
+  .study-finding { grid-template-columns: 1fr 1fr; }
+  .study-finding > p { grid-column: 1 / -1; }
+  .quadrant-summary { grid-template-columns: 1fr; }
+  .model-introduction { padding: 28px 22px; }
+  .summary-methods { grid-template-columns: 1fr; gap: 10px; }
+  .summary-footer { grid-template-columns: 30px 1fr 42px; }
+  .summary-footer p { display: none; }
+}

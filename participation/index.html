@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAT & CITY — Your Voice</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./mini-map.css" />
+  <link rel="stylesheet" href="./map-controls.css?v=20261103-top-filter" />
+  <link rel="stylesheet" href="./cloud.css?v=20261103-live-only" />
+  <link rel="stylesheet" href="./final-overrides.css" />
+</head>
+<body data-frame="participation">
+  <div class="site-shell">
+    <main class="participatory-page">
+      <aside class="survey-sidebar" aria-label="Share your experience">
+        <h1>HOW DO RATS AFFECT YOUR DAILY LIFE?</h1>
+        <form id="feedback-form" novalidate>
+          <section class="field-section neighborhood-section">
+            <h2>Where are you sharing your experience?</h2>
+            <div class="search-wrapper">
+              <label class="sr-only" for="neighborhood">Search a neighborhood or ZIP Code</label>
+              <input id="neighborhood" autocomplete="off" placeholder="Search neighborhood or ZIP Code..." aria-controls="search-results" />
+              <div id="search-results" class="search-results hidden" role="listbox"></div>
+            </div>
+            <div id="selected-location" class="selected-location hidden"></div>
+          </section>
+
+          <section id="confirm-card" class="confirm-card hidden" aria-label="Confirm your area">
+            <div class="card-heading"><h3>Confirm your area</h3><button type="button" id="close-confirm" aria-label="Close area confirmation">×</button></div>
+            <p>Click an approximate area you know on the map. We only save its ZIP Code, not your clicked location.</p>
+            <div class="mini-map" aria-label="ZIP area confirmation map"></div>
+            <div id="zip-choices" class="zip-choices"></div>
+            <p class="fine-print">Real ZCTA boundaries. The map click is converted to a ZIP Code; no precise coordinates are stored.</p>
+          </section>
+
+          <section class="field-section rating-section">
+            <h2>How much does it affect you?</h2>
+            <div class="rating-options" role="radiogroup" aria-label="Perceived disruption">
+              <button type="button" data-rating="low" class="rating-option"><i class="dot green"></i>Not disruptive</button>
+              <button type="button" data-rating="moderate" class="rating-option"><i class="dot yellow"></i>Moderately</button>
+              <button type="button" data-rating="high" class="rating-option"><i class="dot red"></i>Highly disruptive</button>
+            </div>
+            <p id="rating-error" class="validation hidden">Please select a rating.</p>
+          </section>
+          <section class="field-section comment-section">
+            <label for="comment">Add a comment <span>(optional)</span></label>
+            <textarea id="comment" rows="4" maxlength="500" placeholder="Tell us about your experience. Please avoid sharing exact addresses or personal details."></textarea>
+          </section>
+          <button class="submit-button" type="submit">SHARE YOUR EXPERIENCE</button>
+          <div id="form-message" class="form-message hidden" role="status"></div>
+          <div id="cloud-status" class="cloud-status hidden" role="status"></div>
+        </form>
+      </aside>
+
+      <section class="map-area" aria-label="Participatory map prototype">
+        <div id="real-map" class="real-map" aria-label="Interactive map with real Borough and ZCTA boundaries"></div>
+        <div id="map-viewport" class="map-viewport">
+          <div id="map-stage" class="map-stage">
+            <div class="map-image" role="img" aria-label="New York five boroughs reference map"></div>
+            <svg id="dot-layer" class="dot-layer" viewBox="0 0 980 964" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <button type="button" class="borough-hit bronx" data-borough="Bronx" aria-label="Explore Bronx"></button>
+            <button type="button" class="borough-hit manhattan" data-borough="Manhattan" aria-label="Explore Manhattan"></button>
+            <button type="button" class="borough-hit queens" data-borough="Queens" aria-label="Explore Queens"></button>
+            <button type="button" class="borough-hit brooklyn" data-borough="Brooklyn" aria-label="Explore Brooklyn"></button>
+            <button type="button" class="borough-hit staten" data-borough="Staten Island" aria-label="Explore Staten Island"></button>
+            <div id="zip-markers" class="zip-markers hidden"></div>
+          </div>
+        </div>
+        <div class="map-top-controls"><span id="map-mode" class="map-mode">NYC Overview</span><div class="map-filter-control"><label for="map-filter">Show dots</label><select id="map-filter" class="filter-select" aria-label="Filter map dots by disruption"><option value="all">🔴 🟡 🟢 All</option></select></div></div>
+        <div class="map-zoom-controls"><button type="button" id="zoom-in" aria-label="Zoom in">+</button><button type="button" id="zoom-out" aria-label="Zoom out">−</button><button type="button" id="reset-map" aria-label="Reset map view" title="View all NYC">↻</button></div>
+        <div class="map-legend"><strong>Residents' feedback</strong><div class="legend-categories"><span><i class="dot green"></i>Not disruptive</span><span><i class="dot yellow"></i>Moderately</span><span><i class="dot red"></i>Highly disruptive</span></div><small id="dot-value">1 dot = 20 responses</small></div>
+        <div class="prototype-label">Community feedback · Dots are grouped by ZIP, not exact locations</div>
+        <div id="live-empty-state" class="live-empty-state hidden" role="status">No shared responses yet. Be the first to contribute.</div>
+        <aside id="detail-panel" class="detail-panel hidden" aria-label="ZIP Code details"></aside>
+      </section>
+    </main>
+  </div>
+  <script src="./data/map-data.js" defer></script>
+  <script src="./data/neighborhood-search.js" defer></script>
+  <script src="./cloud-config.js" defer></script>
+  <script src="./vendor/supabase.js" defer></script>
+  <script src="./app.js?v=20261103-live-only" defer></script>
+  <script src="./svg-map.js?v=20261103-live-only" defer></script>
+  <script src="./cloud.js?v=20261103-live-only" defer></script>
+  <script src="../integration-frame.js" defer></script>
+</body>
+</html>

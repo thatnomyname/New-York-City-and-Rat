@@ -1,0 +1,21 @@
+/* Confirmation map uses a pixel viewBox, independently of the main map. */
+.mini-map.true-mini { background: #e8ecec; }
+.true-mini-svg { display: block; overflow: hidden; }
+.true-mini-svg .mini-land { fill: #d8ddda; stroke: #c6cfcc; stroke-width: .6; }
+.true-mini-svg .mini-borough-land { fill: #f4f2eb; stroke: #c5cfcc; stroke-width: .7; }
+.true-mini-svg .mini-neighbor-zip { fill: none; stroke: #c4cecc; stroke-width: .7; }
+.true-mini-svg .mini-real-zip { fill: #a9c9e5; fill-opacity: .55; stroke: none; cursor: pointer; }
+.true-mini-svg .mini-real-zip:hover,
+.true-mini-svg .mini-real-zip:focus,
+.true-mini-svg .mini-real-zip.selected { fill: #82b3df; fill-opacity: .8; outline: none; }
+.true-mini-svg .mini-zip-outline { fill: none; stroke: #467cae; stroke-width: 1.7; pointer-events: none; }
+.true-mini-svg .mini-zip-outline.selected { stroke: #245a89; stroke-width: 2.3; }
+.true-mini-svg .mini-road { fill: none; stroke: #fff; stroke-width: .85; stroke-linecap: round; pointer-events: none; }
+.true-mini-svg .mini-streets,
+.true-mini-svg .mini-road-labels,
+.true-mini-svg .mini-zip-badge { pointer-events: none; }
+.true-mini-svg .mini-street-label { fill: #667b80; font: 9px Inter, Arial, sans-serif; text-anchor: middle; paint-order: stroke; stroke: #f5f6f3; stroke-width: 2.5; stroke-linejoin: round; pointer-events: none; }
+.true-mini-svg .mini-zip-badge rect { fill: #fffffff0; stroke: #9cb7cc; stroke-width: .8; }
+.true-mini-svg .mini-label-leader { fill: none; stroke: #467cae; stroke-width: .8; pointer-events: none; }
+.true-mini-svg .mini-zip-label { fill: #164b7e; font: 700 12px Inter, Arial, sans-serif; text-anchor: middle; stroke: none; pointer-events: none; }
+.mini-map-message { padding: 20px; }

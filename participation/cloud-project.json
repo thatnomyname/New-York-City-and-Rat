@@ -1,0 +1,12 @@
+{
+  "project_id": "kdumywidhbmimzdigcgo",
+  "name": "rat-city",
+  "organization": "Bai Le's Org",
+  "region": "us-east-1",
+  "dashboard": "https://supabase.com/dashboard/project/kdumywidhbmimzdigcgo",
+  "api_url": "https://kdumywidhbmimzdigcgo.supabase.co",
+  "submission_function": "rat-city-submit",
+  "table": "public.rat_feedback",
+  "creation_quote_usd_monthly": 0,
+  "verified_date": "2026-11-03"
+}

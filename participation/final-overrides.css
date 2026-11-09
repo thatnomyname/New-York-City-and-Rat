@@ -1,0 +1,128 @@
+/* The final integrated page supplies the shared navigation outside this frame. */
+.site-shell {
+  max-width: none;
+  min-height: 964px;
+  margin: 0;
+  background: #172833;
+  box-shadow: none;
+}
+
+.survey-sidebar {
+  background: #172833;
+  color: #f4f1e9;
+}
+
+.survey-sidebar h1,
+.survey-sidebar h2,
+.survey-sidebar h3,
+.survey-sidebar label,
+.survey-sidebar .comment-section label span {
+  color: #f4f1e9;
+}
+
+.survey-sidebar input,
+.survey-sidebar textarea,
+.survey-sidebar button,
+.survey-sidebar .confirm-card,
+.survey-sidebar .search-results,
+.survey-sidebar .search-result,
+.survey-sidebar .zip-choice {
+  border-color: #f4f1e9;
+  background: #f4f1e9;
+  color: #172833;
+  box-shadow: none;
+}
+
+.survey-sidebar input::placeholder,
+.survey-sidebar textarea::placeholder {
+  color: rgba(23, 40, 51, .68);
+}
+
+.survey-sidebar input:focus,
+.survey-sidebar textarea:focus,
+.survey-sidebar .rating-option:focus-visible,
+.survey-sidebar .rating-option:hover,
+.survey-sidebar .submit-button:focus-visible,
+.survey-sidebar .submit-button:hover,
+.survey-sidebar .zip-choice:hover,
+.survey-sidebar .zip-choice.selected {
+  border-color: #d5d8d1;
+  background: #e8e0d1;
+  color: #172833;
+  box-shadow: 0 0 0 3px rgba(244, 241, 233, .24);
+}
+
+.survey-sidebar .rating-option.selected {
+  border-color: #d5d8d1;
+  background: #e8e0d1;
+  color: #172833;
+  box-shadow: 0 0 0 3px rgba(244, 241, 233, .24);
+}
+
+.survey-sidebar .search-result:hover,
+.survey-sidebar .search-result:focus {
+  background: #e8e0d1;
+  color: #172833;
+}
+
+.survey-sidebar .confirm-card p,
+.survey-sidebar .confirm-card .fine-print {
+  color: #172833;
+}
+
+.survey-sidebar .confirm-card h3 {
+  color: #172833;
+}
+
+.survey-sidebar .selected-location {
+  background: #f4f1e9;
+  color: #172833;
+}
+
+/* Match the three-button control used by the 3D city model. */
+.map-zoom-controls {
+  display: grid;
+  gap: 0;
+  right: auto;
+  left: 18px;
+  top: 88px;
+  border: 1px solid #aebdba;
+  box-shadow: 0 7px 18px rgba(23, 40, 51, .14);
+}
+
+.map-zoom-controls button {
+  width: 58px;
+  height: 54px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #c4cdca;
+  background: rgba(255, 253, 248, .96);
+  color: #172833;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.map-zoom-controls button:last-child {
+  border-bottom: 0;
+  font-size: 20px;
+}
+
+.map-zoom-controls button:hover,
+.map-zoom-controls button:focus-visible,
+.map-zoom-controls button:active {
+  background: #172833;
+  color: #f4f1e9;
+  outline: 0;
+}
+
+@media (max-width: 900px) {
+  .participatory-page {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .participatory-page {
+    height: auto;
+  }
+}

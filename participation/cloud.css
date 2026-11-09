@@ -1,0 +1,5 @@
+#cloud-status { margin-top: 10px; font-size: 11px; line-height: 1.45; color: #68747e; }
+#cloud-status[data-status="online"] { color: #31704c; }
+#cloud-status[data-status="offline"] { color: #a24a32; }
+.submit-button:disabled { opacity: .65; cursor: wait; }
+.live-empty-state { position: absolute; z-index: 6; left: 50%; top: 45%; transform: translate(-50%,-50%); max-width: 85%; padding: 14px 18px; border-radius: 10px; background: #fffffff2; box-shadow: 0 4px 18px #172a3726; font-size: 13px; line-height: 1.5; text-align: center; pointer-events: none; }

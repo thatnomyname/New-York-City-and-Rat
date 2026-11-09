@@ -1,0 +1,22 @@
+.integrated-section {
+  width: 100%;
+  min-height: 100svh;
+  margin: 0;
+  overflow: hidden;
+  background: #f4f1e9;
+  scroll-margin-top: 0;
+}
+
+.integrated-frame {
+  display: block;
+  width: 100%;
+  min-height: calc(100svh - var(--header-height));
+  border: 0;
+  background: #f4f1e9;
+}
+
+@media (max-width: 720px) {
+  .integrated-frame {
+    min-height: calc(100svh - 60px);
+  }
+}

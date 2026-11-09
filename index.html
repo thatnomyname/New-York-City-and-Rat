@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rat & City — an introduction to rodent activity and public-health concerns in New York City."
+    />
+    <title>Rat &amp; City | Introduction &amp; Hotspot Overlap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Isometra&family=Montserrat:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="introduction/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="summary.css" />
+    <link rel="stylesheet" href="2.1 3D/embedded.css" />
+    <link rel="stylesheet" href="integration.css" />
+    <script src="introduction/assets/rat-city-data.js" defer></script>
+    <script src="introduction/script.js" defer></script>
+    <script src="0.processed data/hotspot-map-data.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="0.processed data/hotspot-summary-data.js" defer></script>
+    <script src="summary.js" defer></script>
+    <script src="2.1 3D/embedded-loader.js" defer></script>
+    <script src="integration.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Rat and City home">RAT &amp; CITY</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">HOME</a>
+        <div class="explore-menu">
+          <button
+            class="explore-trigger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="explore-dropdown"
+          >
+            EXPLORE <span class="triangle" aria-hidden="true">▼</span>
+          </button>
+          <div class="explore-dropdown" id="explore-dropdown">
+            <a href="#hotspot-overlap">IN EVERYDAY LIFE</a>
+            <a href="#timeline">IN CHANGING CITY</a>
+          </div>
+        </div>
+        <a href="#participation">YOUR VOICE</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="opening" id="home" aria-label="Rat and City introduction">
+        <div class="hero-panel">
+          <img
+            class="hero-image"
+            src="introduction/assets/intro-rat.png"
+            alt="A surreal giant white rat carrying a shopping bag on a New York City street"
+          />
+          <div class="hero-wash" aria-hidden="true"></div>
+          <div class="hero-copy">
+            <h1>HOW DO RATS<br />MEET THE CITY?</h1>
+            <a class="journey-button" href="#hotspot-overlap">START THE JOURNEY</a>
+          </div>
+        </div>
+
+        <div class="intro-panel">
+          <div class="intro-copy">
+            <h2>MORE THAN AN URBAN NUISANCE</h2>
+            <p class="lede">
+              In New York City, rats are more than a sanitation concern. Their presence
+              connects the conditions of streets, buildings, food waste, and public health.
+            </p>
+          </div>
+
+          <div class="metric-grid" aria-label="New York City rat data overview">
+            <article class="metric-card" data-metric="complaints">
+              <p class="metric-state sr-only">CONNECTING TO NYC OPEN DATA</p>
+              <p class="metric-value" aria-live="polite">—</p>
+              <h3>RAT ACTIVITY COMPLAINTS</h3>
+            </article>
+            <article class="metric-card" data-metric="inspections">
+              <p class="metric-state sr-only">CONNECTING TO NYC OPEN DATA</p>
+              <p class="metric-value" aria-live="polite">—</p>
+              <h3>RAT INSPECTIONS</h3>
+            </article>
+            <article class="metric-card" data-metric="outdoor">
+              <p class="metric-state sr-only">LOADED FROM DOWNLOADED NYC OPEN DATA</p>
+              <p class="metric-value" aria-live="polite">—</p>
+              <h3>REPORTING RATS OUTDOORS</h3>
+            </article>
+            <article class="metric-card" data-metric="diseases">
+              <p class="metric-state sr-only">LOADED FROM DOWNLOADED NYC HEALTH DATA</p>
+              <p class="metric-value" aria-live="polite">—</p>
+              <h3>RELATED-DISEASES CASES</h3>
+            </article>
+          </div>
+          <p class="source-note">
+            * Complaints and inspections attempt to refresh from NYC Open Data and use a
+            verified downloaded snapshot when the live API is unavailable. Outdoor reports
+            cover 2010–present; disease cases cover 2000–2024.
+          </p>
+
+          <section class="disease-section" aria-labelledby="disease-title">
+            <h2 id="disease-title">RODENT-RELATED DISEASES</h2>
+            <div class="disease-tabs" role="tablist" aria-label="Choose a disease">
+              <button
+                class="disease-tab is-active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="disease-panel"
+                data-disease="leptospirosis"
+              >
+                LEPTOSPIROSIS
+              </button>
+              <button
+                class="disease-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="disease-panel"
+                data-disease="hantavirus"
+              >
+                HANTAVIRUS
+              </button>
+              <button
+                class="disease-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="disease-panel"
+                data-disease="plague"
+              >
+                PLAGUE
+              </button>
+            </div>
+
+            <div class="disease-panel" id="disease-panel" role="tabpanel" tabindex="0">
+              <div class="disease-heading-row">
+                <h3 id="disease-name">LEPTOSPIROSIS</h3>
+                <label class="year-select">
+                  <span class="sr-only">Select year</span>
+                  <select id="disease-year" aria-label="Disease information year">
+                    <option>2024</option>
+                    <option>2023</option>
+                    <option>2022</option>
+                    <option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                    <option>2015</option>
+                    <option>2014</option>
+                    <option>2013</option>
+                    <option>2012</option>
+                    <option>2011</option>
+                    <option>2010</option>
+                    <option>2009</option>
+                    <option>2008</option>
+                    <option>2007</option>
+                    <option>2006</option>
+                    <option>2005</option>
+                    <option>2004</option>
+                    <option>2003</option>
+                    <option>2002</option>
+                    <option>2001</option>
+                    <option>2000</option>
+                  </select>
+                </label>
+              </div>
+              <div class="disease-dashboard">
+                <aside class="disease-summary-card" aria-label="Selected year case count">
+                  <span class="disease-stat-year" id="disease-stat-year">2024</span>
+                  <strong class="disease-stat-value" id="disease-stat-value">32</strong>
+                  <span class="disease-stat-label">REPORTED NYC CASES</span>
+                  <span class="disease-stat-delta" id="disease-stat-delta">+8 FROM 2023</span>
+                </aside>
+
+                <section class="disease-chart-card" aria-labelledby="disease-chart-title">
+                  <div class="disease-chart-heading">
+                    <div>
+                      <span class="disease-chart-kicker">ANNUAL TREND</span>
+                      <h4 id="disease-chart-title">REPORTED CASES, 2000–2024</h4>
+                    </div>
+                    <div class="disease-chart-meta">
+                      <span id="disease-total">150 TOTAL CASES</span>
+                      <span id="disease-peak">PEAK: 32 IN 2024</span>
+                    </div>
+                  </div>
+                  <svg
+                    class="disease-chart"
+                    id="disease-chart"
+                    viewBox="0 0 720 220"
+                    role="img"
+                    aria-labelledby="disease-chart-svg-title disease-chart-svg-desc"
+                  ></svg>
+                </section>
+              </div>
+
+              <div class="disease-insights">
+                <article class="disease-insight">
+                  <span>HOW IT SPREADS</span>
+                  <p id="disease-transmission">
+                    Contact with urine from infected animals or contaminated water, soil, and
+                    food.
+                  </p>
+                </article>
+                <article class="disease-insight">
+                  <span>WHY IT MATTERS</span>
+                  <p id="disease-description">
+                    Severe illness can cause kidney or liver failure, meningitis, respiratory
+                    distress, and can be fatal without treatment.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="hotspot-section" id="hotspot-overlap" aria-labelledby="hotspot-title">
+        <header class="hotspot-heading">
+          <div>
+            <p class="hotspot-kicker">IN EVERYDAY LIFE · 01</p>
+            <h2 id="hotspot-title">RATS &amp; THE URBAN LANDSCAPE</h2>
+          </div>
+          <p>
+            <span>Explore how rat complaints are distributed across New York City and how they overlap with urban factors such as population, income,</span>
+            <span>building age, and restaurant density. Use the interactive map to compare spatial patterns and identify potential relationships.</span>
+          </p>
+        </header>
+
+        <div class="hotspot-map-shell">
+          <div id="hotspot-map" class="hotspot-map" role="img" aria-label="New York City geographic base map with swipeable spatial overlay">
+            <div class="map-loading">BUILDING THE NYC BASE MAP…</div>
+          </div>
+
+          <aside class="icon-rail" aria-label="Spatial overlay layers">
+            <button class="layer-button" type="button" data-layer="population" aria-label="Show population overlay" aria-pressed="false">
+              <img src="assets/icons/population.png" alt="" /><span>POPULATION</span>
+            </button>
+            <button class="layer-button" type="button" data-layer="income" aria-label="Show income overlay" aria-pressed="false">
+              <img src="assets/icons/income.png" alt="" /><span>INCOME</span>
+            </button>
+            <button class="layer-button" type="button" data-layer="housing" aria-label="Show housing age overlay" aria-pressed="false">
+              <img src="assets/icons/housing-age.png" alt="" /><span>HOUSING AGE</span>
+            </button>
+            <button class="layer-button" type="button" data-layer="restaurant" aria-label="Show restaurant overlay" aria-pressed="false">
+              <img src="assets/icons/restaurant.png" alt="" /><span>RESTAURANTS</span>
+            </button>
+            <button class="layer-button" type="button" data-layer="disease" aria-label="Show rat-borne disease overlay" aria-pressed="false">
+              <img src="assets/icons/disease.png" alt="" /><span>RAT-BORNE HEALTH</span>
+            </button>
+            <div class="zoom-controls" aria-label="Map zoom controls">
+              <button type="button" id="hotspot-zoom-in" aria-label="Zoom in">+</button>
+              <button type="button" id="hotspot-zoom-out" aria-label="Zoom out">−</button>
+            </div>
+          </aside>
+
+          <div class="swipe-divider" id="swipe-divider" role="separator" aria-orientation="vertical" aria-label="Drag to compare base map and overlay" tabindex="0">
+            <span aria-hidden="true">◀ ▶</span>
+          </div>
+
+          <div class="map-legends">
+            <section class="map-legend complaints-key">
+              <strong>ORANGE CIRCLES · RAT COMPLAINTS</strong>
+              <div class="legend-ramp complaints-ramp"></div>
+              <div class="legend-range"><span id="complaint-low">FEWER</span><span id="complaint-high">MORE</span></div>
+              <a href="https://data.cityofnewyork.us/d/erm2-nwe9" target="_blank" rel="noreferrer">NYC 311 · 2020–PRESENT</a>
+            </section>
+            <section class="map-legend layer-key" id="layer-key" aria-live="polite">
+              <strong>POPULATION DENSITY</strong>
+              <div class="legend-ramp" id="overlay-legend-ramp"></div>
+              <div class="legend-range"><span id="legend-low">LOWER</span><span id="legend-high">HIGHER</span></div>
+              <small id="legend-note">Residents per census tract area</small>
+              <a id="legend-source" href="https://data.cityofnewyork.us/d/qmcw-ur37" target="_blank" rel="noreferrer">NYC OPEN DATA · QMCW-UR37</a>
+            </section>
+          </div>
+
+          <aside class="borough-data" id="borough-data" aria-live="polite" aria-hidden="true">
+            <button type="button" class="borough-data-close" aria-label="Close borough data">×</button>
+            <p class="borough-data-kicker">BOROUGH PROFILE</p>
+            <h3 id="borough-data-title">BROOKLYN</h3>
+            <p class="borough-data-context">Official NYC Open Data summaries for the selected borough.</p>
+            <div class="borough-data-grid">
+              <div><span>RAT COMPLAINTS</span><strong data-stat="complaints">—</strong><small>2020–present</small></div>
+              <div><span>POPULATION</span><strong data-stat="population">—</strong><small>2020 census</small></div>
+              <div><span>LOW/MOD INCOME</span><strong data-stat="income">—</strong><small>population share</small></div>
+              <div><span>BUILDING AGE</span><strong data-stat="housing">—</strong><small id="housing-detail">sample average</small></div>
+              <div><span>RESTAURANTS</span><strong data-stat="restaurants">—</strong><small id="restaurant-detail">active permits</small></div>
+              <div><span>RAT-BORNE DISEASES</span><strong data-stat="disease">—</strong><small id="disease-detail">Lepto · Hanta · Plague</small></div>
+            </div>
+          </aside>
+        </div>
+
+      </section>
+
+      <section class="summary-section" id="spatial-summary" aria-labelledby="summary-title">
+        <header class="summary-heading">
+          <div class="summary-heading-copy">
+            <p class="summary-kicker">IN EVERYDAY LIFE · 02 · SPATIAL SUMMARY</p>
+            <h2 id="summary-title">FIVE CHECKS OF THE MAP</h2>
+          </div>
+          <p class="summary-lead">
+            The complaint map is only a starting point. These five checks compare it with restaurant activity, income, season and inspection results.<br />
+            They show associations in the available records, not a single explanation for why rats appear where they do.
+          </p>
+        </header>
+
+        <div class="summary-studies">
+          <article class="study-row study-restaurant">
+            <figure class="study-chart-card">
+              <svg id="restaurant-density-chart" viewBox="0 0 560 320" role="img" aria-label="Scatter plot comparing restaurant density and rat complaint density by ZIP Code"></svg>
+              <figcaption>ZIP Codes with population ≥ 1,000 · log-scaled densities</figcaption>
+            </figure>
+            <div class="study-copy">
+              <p class="study-number">01 · RESTAURANT DENSITY</p>
+              <h3>Restaurants and Complaints by ZIP Code</h3>
+              <p class="study-question">We compared restaurant permits with outdoor rat complaints after adjusting both for land area.</p>
+              <p>Each point represents one ZIP Code. Using density rather than raw totals makes compact and large ZIP Codes easier to compare.</p>
+              <div class="study-finding"><span>RESULT</span><strong>r = <b data-summary-stat="restaurant-correlation">—</b></strong><p>ZIP Codes with more restaurants per square kilometre also tend to record more complaints per square kilometre. This is an association, not evidence that restaurants cause the complaints.</p></div>
+            </div>
+          </article>
+
+          <article class="study-row study-income">
+            <figure class="study-chart-card">
+              <svg id="income-exposure-chart" viewBox="0 0 560 320" role="img" aria-label="Income quartile comparison of rat complaint rates and confirmed rat activity inspection rates"></svg>
+              <figcaption>Q1 = lowest low/mod-income share · Q4 = highest share</figcaption>
+            </figure>
+            <div class="study-copy">
+              <p class="study-number">02 · INCOME &amp; UNEQUAL EXPOSURE</p>
+              <h3>Complaint Rates Do Not Match Inspection Results</h3>
+              <p class="study-question">We grouped ZIP Codes by the share of residents with low or moderate incomes.</p>
+              <p>Bars show 311 complaints per 10,000 residents. Dots show the percentage of completed inspections that recorded rat activity.</p>
+              <div class="study-finding"><span>RESULT</span><strong><b data-summary-stat="income-q4-positive">—</b>%</strong><p>The group with the highest low/moderate-income share does not submit the most complaints, but it has the highest positive-inspection rate. Complaint totals alone therefore miss part of the pattern.</p></div>
+            </div>
+          </article>
+
+          <article class="study-row study-quadrants">
+            <figure class="study-chart-card">
+              <svg id="urban-conditions-chart" viewBox="0 0 560 320" role="img" aria-label="Four-quadrant comparison of restaurant and rat complaint density by ZIP Code"></svg>
+              <figcaption>Median split · four spatial condition types</figcaption>
+            </figure>
+            <div class="study-copy">
+              <p class="study-number">03 · DIFFERENT URBAN CONDITIONS</p>
+              <h3>Not Every Complaint Hotspot Looks the Same</h3>
+              <p class="study-question">A median split places each ZIP Code into one of four complaint-and-restaurant groups.</p>
+              <p>This simple classification separates places where both densities are high from high-complaint ZIP Codes with relatively few restaurants. Those places are likely shaped by other conditions not tested here.</p>
+              <div class="quadrant-summary" id="quadrant-summary" aria-label="ZIP Code counts in each urban-condition quadrant"></div>
+            </div>
+          </article>
+
+          <article class="study-row study-seasonality">
+            <figure class="study-chart-card">
+              <svg id="seasonality-chart" viewBox="0 0 560 320" role="img" aria-label="Average outdoor rat complaints by month from 2020 through 2025"></svg>
+              <figcaption>Mean monthly outdoor complaints · complete years 2020–2025</figcaption>
+            </figure>
+            <div class="study-copy">
+              <p class="study-number">04 · SEASONALITY</p>
+              <h3>Complaints Peak in Midsummer</h3>
+              <p class="study-question">Monthly averages are calculated from complete years between 2020 and 2025.</p>
+              <p>We use the date each outdoor rat complaint was created and leave out the incomplete current year, which would pull later months downward.</p>
+              <div class="study-finding"><span>PEAK MONTH</span><strong data-summary-stat="peak-month">—</strong><p>Reports rise through spring, reach their highest monthly average in summer and then fall toward winter. The map will look different depending on which part of the year is sampled.</p></div>
+            </div>
+          </article>
+
+          <article class="study-row study-inspections">
+            <figure class="study-chart-card">
+              <svg id="inspection-chart" viewBox="0 0 560 320" role="img" aria-label="Scatter plot comparing rat complaints per 10,000 residents with confirmed rat activity inspection share"></svg>
+              <figcaption>ZIP Codes with at least 100 completed inspection outcomes</figcaption>
+            </figure>
+            <div class="study-copy">
+              <p class="study-number">05 · COMPLAINTS VS. CONFIRMED ACTIVITY</p>
+              <h3>Complaints and Inspections Usually Move Together</h3>
+              <p class="study-question">We compared complaint rates with the share of NYC Health inspections marked “Failed for Rat Activity.”</p>
+              <p>The comparison includes ZIP Codes with at least 100 completed inspection outcomes, so very small samples do not dominate the chart.</p>
+              <div class="study-finding"><span>RANK CORRELATION</span><strong>ρ = <b data-summary-stat="inspection-correlation">—</b></strong><p>ZIP Codes with higher complaint rates generally have more inspections that confirm rat activity. The points do not line up perfectly, which is why complaints and inspections should be read together.</p></div>
+            </div>
+          </article>
+        </div>
+
+      </section>
+
+      <section class="model-introduction" aria-labelledby="model-introduction-title">
+        <p class="model-introduction-kicker">IN EVERYDAY LIFE · 03 · 3D CITY MODEL</p>
+        <h3 id="model-introduction-title">FOLLOW WASTE MOVEMENT THROUGH THE CITY</h3>
+        <p>Use the 3D model to examine how waste infrastructure, collection frequency, storage-time conditions, truck-route proxies and rat sighting complaints overlap across New York City.</p>
+      </section>
+
+      <section class="waste-section" id="waste-in-motion" aria-label="Three-dimensional New York City model">
+        <h2 class="sr-only">New York City 3D building model</h2>
+        <div class="waste-model-shell">
+          <canvas id="city-model" aria-label="New York City building model viewed from the southeast"></canvas>
+          <canvas id="city-overlay" aria-hidden="true"></canvas>
+          <div class="waste-model-grid" aria-hidden="true"></div>
+          <div class="loading-state" id="loading-state">LOADING NYC BUILDING FOOTPRINTS…</div>
+
+          <aside class="waste-layer-panel" aria-label="Waste exposure layers">
+            <div class="waste-layer-heading">
+              <span>SYSTEM LAYERS</span>
+              <strong>WASTE MOVEMENT + RAT SIGHTINGS</strong>
+            </div>
+            <label><input type="checkbox" data-waste-layer="infrastructure" checked><i class="layer-swatch facility"></i><span>Waste infrastructure · NYC + regional</span></label>
+            <label><input type="checkbox" data-waste-layer="frequency" checked><i class="layer-swatch frequency"></i><span>Collection frequency · 2× / 3× weekly</span></label>
+            <label><input type="checkbox" data-waste-layer="storage" checked><i class="layer-swatch storage"></i><span>Storage-time proxy</span></label>
+            <label><input type="checkbox" data-waste-layer="routes" checked><i class="layer-swatch routes"></i><span>Truck-route proxy + rat density</span></label>
+            <label><input type="checkbox" data-waste-layer="complaints" checked><i class="layer-swatch complaints"></i><span>Rat sighting complaints</span></label>
+          </aside>
+
+          <aside class="waste-dynamic-legend" id="waste-dynamic-legend" aria-label="Visible map legend" aria-live="polite">
+            <div class="legend-heading"><span>VISIBLE LEGEND</span><strong>MAP SYMBOLS</strong></div>
+            <section data-legend-layer="infrastructure">
+              <b>Waste infrastructure</b>
+              <span><i class="legend-dot mts"></i>MTS</span><span><i class="legend-dot transfer"></i>TS / WTE</span>
+            </section>
+            <section data-legend-layer="frequency">
+              <b>Collection frequency</b>
+              <span><i class="legend-area twice"></i>2× weekly</span><span><i class="legend-area thrice"></i>3× weekly</span>
+            </section>
+            <section data-legend-layer="storage">
+              <b>Storage-time proxy</b>
+              <span class="legend-wide"><i class="legend-line storage"></i>Longer interval = stronger line</span>
+            </section>
+            <section data-legend-layer="routes">
+              <b>Truck-route proxy</b>
+              <span class="legend-wide"><i class="legend-line route"></i>Lower → higher rat reports / km</span>
+            </section>
+            <section data-legend-layer="complaints">
+              <b>Rat complaints</b>
+              <span class="legend-wide"><i class="legend-dot complaints"></i>311 outdoor rat sighting</span>
+            </section>
+          </aside>
+
+          <div class="view-controls" aria-label="3D view controls">
+            <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" id="reset-view" aria-label="Reset 3D view">↺</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="integrated-section" id="timeline" aria-labelledby="timeline-title">
+        <h2 class="sr-only" id="timeline-title">City response timeline</h2>
+        <iframe
+          class="integrated-frame"
+          id="timeline-frame"
+          src="timeline/index.html"
+          title="Rat and City — City response timeline"
+          loading="lazy"
+        ></iframe>
+      </section>
+
+      <section class="integrated-section" id="participation" aria-labelledby="participation-title">
+        <h2 class="sr-only" id="participation-title">Your Voice participation map</h2>
+        <iframe
+          class="integrated-frame"
+          id="participation-frame"
+          src="participation/index.html"
+          title="Rat and City — Your Voice participation map"
+          loading="lazy"
+        ></iframe>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "generated": "2026-11-08T12:22:22.049Z",
+  "method": "Analytical waste-truck route proxy: DSNY collection-frequency-zone centroid to nearest in-city DSNY waste facility, routed on the official NYC DOT Truck Route network. This is not vehicle GPS or an observed DSNY itinerary.",
+  "bufferMeters": 150,
+  "sources": {
+    "frequencies": {
+      "id": "rv63-53db",
+      "url": "https://data.cityofnewyork.us/d/rv63-53db"
+    },
+    "facilities": {
+      "id": "ufxk-pq9j",
+      "url": "https://data.cityofnewyork.us/d/ufxk-pq9j"
+    },
+    "truckRoutes": {
+      "id": "jjja-shxy",
+      "url": "https://data.cityofnewyork.us/d/jjja-shxy"
+    },
+    "ratSightings": {
+      "name": "311 Rat Sighting complaints",
+      "files": [
+        "NYC311_outdoor_rat_sightings_2010_2019.csv",
+        "NYC311_outdoor_rat_sightings_2020_present.csv"
+      ]
+    }
+  },
+  "stats": {
+    "zones": 610,
+    "facilities": 12,
+    "truckRouteSegments": 32939,
+    "ratSightings": 23408,
+    "ratSightingsWithinAnyProxyCorridor": 11393,
+    "ratSightingsWithinAnyProxyCorridorPct": 48.7,
+    "proxyCorridorEstimatedLandCoveragePct": 34.3,
+    "ratSightingsConcentrationLift": 1.42,
+    "storageDaysRatDensityCorrelation": -0.568
+  },
+  "interpretation": {
+    "routeExposure": "Counts indicate reported outdoor rat sightings within 150 m of each modeled corridor. Overlapping corridors can count the same complaint more than once.",
+    "concentrationLift": "The concentration lift compares the share of rat complaints in the route corridors with a deterministic 30,000-point Monte Carlo estimate of the corridors' share of DSNY-served land.",
+    "correlation": "The Pearson correlation compares storage-time proxy days with rat sightings per modeled route-kilometre. It is descriptive and does not demonstrate causation.",
+    "limitations": [
+      "No DSNY vehicle GPS was used.",
+      "Zone centroids and straight first/last-mile connectors are analytical approximations.",
+      "311 complaints reflect reporting behavior as well as rat activity.",
+      "Routes overlap and are not frequency-weighted vehicle counts."
+    ]
+  }
+}
